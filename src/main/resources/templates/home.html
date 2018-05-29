@@ -243,6 +243,13 @@
                         <option th:each="city : ${cities}" th:value="${city.name}" th:text="${city.name}"></option>
                     </select>
                 </a>
+                <form action="/home" id="countryForm" method="get">
+                    <select class="btn btn-default" id="country" name="country" onchange="changeText();">
+                        <option value="0">All countries</option>
+                        <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.name}"
+                                th:selected="${country.id} == ${selectedCountry}">></option>
+                    </select>
+                </form>
             </li>
         </ul>
     </div>
@@ -297,6 +304,9 @@
                 }
             }
 
+        function changeText(){
+            document.getElementById("countryForm").submit();
+        }
 
         </script>
     </div>

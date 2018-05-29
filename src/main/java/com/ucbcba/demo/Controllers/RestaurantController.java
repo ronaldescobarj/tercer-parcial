@@ -131,6 +131,7 @@ public class RestaurantController {
             restaurantPhotos.add(base64Encoded);
         }
         model.addAttribute("photos", restaurantPhotos);
+        model.addAttribute("country", restaurant.getCity().getCountry());
         return "ShowRestaurant";
     }
 
@@ -208,6 +209,7 @@ public class RestaurantController {
             restaurantPhotos.add(base64Encoded);
         }
         model.addAttribute("photos", restaurantPhotos);
+        model.addAttribute("country", restaurant.getCity().getCountry());
         return "restaurantUserView";
     }
 
